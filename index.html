@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Helyasadat Hashemi Aghdam</title>
+<meta name="description" content="Helyasadat Hashemi Aghdam is an M.Sc. student in Computer Engineering at Bilkent University, working on machine learning for RNA design.">
+<meta name="author" content="Helyasadat Hashemi Aghdam">
+<meta name="color-scheme" content="light dark">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Helyasadat Hashemi Aghdam">
+<meta property="og:description" content="M.Sc. student in Computer Engineering at Bilkent University, working on machine learning for RNA design.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232E43A8'/%3E%3Cpath d='M6 22A10 8 0 0 1 26 22M11 22A5 4.5 0 0 1 21 22' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Helyasadat Hashemi Aghdam",
+  "email": "mailto:helyasadat@bilkent.edu.tr",
+  "affiliation": {"@type": "CollegeOrUniversity", "name": "Bilkent University"},
+  "alumniOf": {"@type": "CollegeOrUniversity", "name": "University of Tabriz"},
+  "knowsAbout": ["Machine learning", "RNA design", "Computational biology"],
+  "sameAs": [
+    "https://scholar.google.com/citations?user=-2s1hzkAAAAJ",
+    "https://github.com/helya02",
+    "https://www.linkedin.com/in/helyasadat-hashemi-aghdam-b2637b21a"
+  ]
+}
+</script>
+<style>
+  :root {
+    --paper: #FBFBFD;
+    --ink: #1E2433;
+    --graphite: #596275;
+    --faint: #A7AFBD;
+    --mist: #E3E7EE;
+    --accent: #2E43A8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #12161F;
+      --ink: #E4E8F0;
+      --graphite: #9CA6B8;
+      --faint: #566074;
+      --mist: #262E3F;
+      --accent: #A3B2FF;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Literata", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-size: 1.125rem;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  p { margin: 0; }
+  p, dd { text-wrap: pretty; }
+  sup { line-height: 0; }
+  a {
+    color: var(--accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    text-decoration-color: color-mix(in srgb, var(--accent) 38%, transparent);
+  }
+  a:hover { text-decoration-color: currentColor; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+  .page { max-width: 47rem; margin: 0 auto; padding: 3.25rem 1.5rem 3rem; }
+
+  /* Header: the RNA fold is the one bold element on the page */
+  .fold { display: block; width: 100%; height: auto; overflow: visible; }
+  .fold .arcs path {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.15;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+    animation: fold 0.8s cubic-bezier(0.2, 0.8, 0.25, 1) var(--d, 0s) both;
+  }
+  @keyframes fold { from { transform: scaleY(0.03); opacity: 0.25; } }
+  .fold text {
+    font: 500 11px/1 ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    text-anchor: middle;
+    fill: var(--graphite);
+  }
+  .fold .u { fill: var(--faint); }
+  .fold .dots { display: none; }
+  .fold .dots circle { fill: var(--graphite); }
+  .fold .dots circle.u { fill: var(--faint); }
+
+  h1 {
+    font-size: clamp(2.35rem, 1.2rem + 3.4vw, 3rem);
+    text-wrap: balance;
+    line-height: 1.05;
+    font-weight: 600;
+    letter-spacing: -0.012em;
+    margin: 1.35rem 0 0.5rem;
+  }
+  .keep { white-space: nowrap; }
+  .role { color: var(--graphite); font-size: 1.1875rem; }
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem 1.4rem;
+    list-style: none;
+    margin: 1.4rem 0 0;
+    padding: 0;
+    font-size: 1rem;
+  }
+  .cv-link {
+    display: inline-block;
+    padding: 0.28rem 0.95rem 0.32rem;
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .cv-link:hover { background: var(--accent); color: var(--paper); }
+
+  /* Intro */
+  .intro { display: flex; align-items: flex-start; gap: 2.5rem; margin-top: 2.75rem; }
+  .intro-text { flex: 1; min-width: 0; }
+  .intro-text p { max-width: 38rem; }
+  .intro-text p + p { margin-top: 1rem; }
+  .portrait { flex: 0 0 9.5rem; margin: 0.4rem 0 0; }
+  .portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 3px; }
+
+  /* Sections: a year column, because every entry here is a point in time */
+  section { margin-top: 3.75rem; }
+  h2 { font-size: 1.5rem; line-height: 1.25; font-weight: 600; margin: 0 0 1.3rem; }
+  h3 { font-size: 1.0625rem; font-style: italic; font-weight: 400; color: var(--graphite); margin: 2rem 0 0.8rem; }
+  h2 + h3 { margin-top: 0; }
+  .entries { list-style: none; margin: 0; padding: 0; }
+  .entry {
+    display: grid;
+    grid-template-columns: 6.25rem minmax(0, 1fr);
+    column-gap: 1rem;
+    align-items: baseline;
+  }
+  .entry + .entry { margin-top: 1.15rem; }
+  .compact .entry + .entry { margin-top: 0.4rem; }
+  .when {
+    color: var(--graphite);
+    font-size: 0.9375rem;
+    font-variant-numeric: lining-nums tabular-nums;
+    white-space: nowrap;
+  }
+  .title { font-weight: 600; line-height: 1.45; }
+  .detail { color: var(--graphite); font-size: 1rem; line-height: 1.55; margin-top: 0.15rem; }
+  .detail strong { color: var(--ink); font-weight: 600; }
+
+  .skills { margin: 0; padding-left: 7.25rem; }
+  .skills div + div { margin-top: 0.9rem; }
+  .skills dt { font-weight: 600; }
+  .skills dd { margin: 0; color: var(--graphite); font-size: 1rem; line-height: 1.55; }
+
+  footer {
+    margin-top: 4.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--mist);
+    color: var(--graphite);
+    font-size: 0.9375rem;
+  }
+  footer p + p { margin-top: 0.25rem; }
+
+  @media (max-width: 36rem) {
+    .page { padding-top: 2.25rem; }
+    .fold .letters { display: none; }
+    .fold .dots { display: inline; }
+    .fold .arcs path { stroke-width: 0.9; }
+    .intro { flex-direction: column; gap: 1.25rem; }
+    .portrait { order: -1; flex: 0 0 auto; width: 7rem; margin: 0; }
+    .entry { grid-template-columns: minmax(0, 1fr); }
+    .when { font-size: 0.875rem; }
+    .skills { padding-left: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .fold .arcs path { animation: none; }
+  }
+  @media print {
+    :root { --paper: #fff; --ink: #000; --graphite: #333; --faint: #999; --accent: #000; }
+    .fold .arcs path { animation: none; }
+    .cv-link { border: 0; padding: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <svg class="fold" viewBox="0 0 760 149" role="img" aria-labelledby="fold-title"><title id="fold-title">Arc diagram of the base pairs in yeast tRNA-Phe</title><g class="arcs"><path d="M125 132A45 37.10 0 0 1 215 132" style="--d:0ms"/><path d="M115 132A55 41.85 0 0 1 225 132" style="--d:45ms"/><path d="M105 132A65 46.26 0 0 1 235 132" style="--d:90ms"/><path d="M95 132A75 50.41 0 0 1 245 132" style="--d:135ms"/><path d="M305 132A40 34.57 0 0 1 385 132" style="--d:130ms"/><path d="M295 132A50 39.53 0 0 1 395 132" style="--d:175ms"/><path d="M285 132A60 44.09 0 0 1 405 132" style="--d:220ms"/><path d="M275 132A70 48.37 0 0 1 415 132" style="--d:265ms"/><path d="M265 132A80 52.40 0 0 1 425 132" style="--d:310ms"/><path d="M525 132A40 34.57 0 0 1 605 132" style="--d:260ms"/><path d="M515 132A50 39.53 0 0 1 615 132" style="--d:305ms"/><path d="M505 132A60 44.09 0 0 1 625 132" style="--d:350ms"/><path d="M495 132A70 48.37 0 0 1 635 132" style="--d:395ms"/><path d="M485 132A80 52.40 0 0 1 645 132" style="--d:440ms"/><path d="M65 132A295 114.65 0 0 1 655 132" style="--d:390ms"/><path d="M55 132A305 116.97 0 0 1 665 132" style="--d:435ms"/><path d="M45 132A315 119.26 0 0 1 675 132" style="--d:480ms"/><path d="M35 132A325 121.51 0 0 1 685 132" style="--d:525ms"/><path d="M25 132A335 123.74 0 0 1 695 132" style="--d:570ms"/><path d="M15 132A345 125.95 0 0 1 705 132" style="--d:615ms"/><path d="M5 132A355 128.12 0 0 1 715 132" style="--d:660ms"/></g><g class="letters" aria-hidden="true"><text x="5" y="146">G</text><text x="15" y="146">C</text><text x="25" y="146">G</text><text x="35" y="146">G</text><text x="45" y="146">A</text><text x="55" y="146">U</text><text x="65" y="146">U</text><text x="75" y="146" class="u">U</text><text x="85" y="146" class="u">A</text><text x="95" y="146">G</text><text x="105" y="146">C</text><text x="115" y="146">U</text><text x="125" y="146">C</text><text x="135" y="146" class="u">A</text><text x="145" y="146" class="u">G</text><text x="155" y="146" class="u">U</text><text x="165" y="146" class="u">U</text><text x="175" y="146" class="u">G</text><text x="185" y="146" class="u">G</text><text x="195" y="146" class="u">G</text><text x="205" y="146" class="u">A</text><text x="215" y="146">G</text><text x="225" y="146">A</text><text x="235" y="146">G</text><text x="245" y="146">C</text><text x="255" y="146" class="u">G</text><text x="265" y="146">C</text><text x="275" y="146">C</text><text x="285" y="146">A</text><text x="295" y="146">G</text><text x="305" y="146">A</text><text x="315" y="146" class="u">C</text><text x="325" y="146" class="u">U</text><text x="335" y="146" class="u">G</text><text x="345" y="146" class="u">A</text><text x="355" y="146" class="u">A</text><text x="365" y="146" class="u">G</text><text x="375" y="146" class="u">A</text><text x="385" y="146">U</text><text x="395" y="146">C</text><text x="405" y="146">U</text><text x="415" y="146">G</text><text x="425" y="146">G</text><text x="435" y="146" class="u">A</text><text x="445" y="146" class="u">G</text><text x="455" y="146" class="u">G</text><text x="465" y="146" class="u">U</text><text x="475" y="146" class="u">C</text><text x="485" y="146">C</text><text x="495" y="146">U</text><text x="505" y="146">G</text><text x="515" y="146">U</text><text x="525" y="146">G</text><text x="535" y="146" class="u">U</text><text x="545" y="146" class="u">U</text><text x="555" y="146" class="u">C</text><text x="565" y="146" class="u">G</text><text x="575" y="146" class="u">A</text><text x="585" y="146" class="u">U</text><text x="595" y="146" class="u">C</text><text x="605" y="146">C</text><text x="615" y="146">A</text><text x="625" y="146">C</text><text x="635" y="146">A</text><text x="645" y="146">G</text><text x="655" y="146">A</text><text x="665" y="146">A</text><text x="675" y="146">U</text><text x="685" y="146">U</text><text x="695" y="146">C</text><text x="705" y="146">G</text><text x="715" y="146">C</text><text x="725" y="146" class="u">A</text><text x="735" y="146" class="u">C</text><text x="745" y="146" class="u">C</text><text x="755" y="146" class="u">A</text></g><g class="dots" aria-hidden="true"><circle cx="5" cy="140" r="2.6"/><circle cx="15" cy="140" r="2.6"/><circle cx="25" cy="140" r="2.6"/><circle cx="35" cy="140" r="2.6"/><circle cx="45" cy="140" r="2.6"/><circle cx="55" cy="140" r="2.6"/><circle cx="65" cy="140" r="2.6"/><circle cx="75" cy="140" r="2.6" class="u"/><circle cx="85" cy="140" r="2.6" class="u"/><circle cx="95" cy="140" r="2.6"/><circle cx="105" cy="140" r="2.6"/><circle cx="115" cy="140" r="2.6"/><circle cx="125" cy="140" r="2.6"/><circle cx="135" cy="140" r="2.6" class="u"/><circle cx="145" cy="140" r="2.6" class="u"/><circle cx="155" cy="140" r="2.6" class="u"/><circle cx="165" cy="140" r="2.6" class="u"/><circle cx="175" cy="140" r="2.6" class="u"/><circle cx="185" cy="140" r="2.6" class="u"/><circle cx="195" cy="140" r="2.6" class="u"/><circle cx="205" cy="140" r="2.6" class="u"/><circle cx="215" cy="140" r="2.6"/><circle cx="225" cy="140" r="2.6"/><circle cx="235" cy="140" r="2.6"/><circle cx="245" cy="140" r="2.6"/><circle cx="255" cy="140" r="2.6" class="u"/><circle cx="265" cy="140" r="2.6"/><circle cx="275" cy="140" r="2.6"/><circle cx="285" cy="140" r="2.6"/><circle cx="295" cy="140" r="2.6"/><circle cx="305" cy="140" r="2.6"/><circle cx="315" cy="140" r="2.6" class="u"/><circle cx="325" cy="140" r="2.6" class="u"/><circle cx="335" cy="140" r="2.6" class="u"/><circle cx="345" cy="140" r="2.6" class="u"/><circle cx="355" cy="140" r="2.6" class="u"/><circle cx="365" cy="140" r="2.6" class="u"/><circle cx="375" cy="140" r="2.6" class="u"/><circle cx="385" cy="140" r="2.6"/><circle cx="395" cy="140" r="2.6"/><circle cx="405" cy="140" r="2.6"/><circle cx="415" cy="140" r="2.6"/><circle cx="425" cy="140" r="2.6"/><circle cx="435" cy="140" r="2.6" class="u"/><circle cx="445" cy="140" r="2.6" class="u"/><circle cx="455" cy="140" r="2.6" class="u"/><circle cx="465" cy="140" r="2.6" class="u"/><circle cx="475" cy="140" r="2.6" class="u"/><circle cx="485" cy="140" r="2.6"/><circle cx="495" cy="140" r="2.6"/><circle cx="505" cy="140" r="2.6"/><circle cx="515" cy="140" r="2.6"/><circle cx="525" cy="140" r="2.6"/><circle cx="535" cy="140" r="2.6" class="u"/><circle cx="545" cy="140" r="2.6" class="u"/><circle cx="555" cy="140" r="2.6" class="u"/><circle cx="565" cy="140" r="2.6" class="u"/><circle cx="575" cy="140" r="2.6" class="u"/><circle cx="585" cy="140" r="2.6" class="u"/><circle cx="595" cy="140" r="2.6" class="u"/><circle cx="605" cy="140" r="2.6"/><circle cx="615" cy="140" r="2.6"/><circle cx="625" cy="140" r="2.6"/><circle cx="635" cy="140" r="2.6"/><circle cx="645" cy="140" r="2.6"/><circle cx="655" cy="140" r="2.6"/><circle cx="665" cy="140" r="2.6"/><circle cx="675" cy="140" r="2.6"/><circle cx="685" cy="140" r="2.6"/><circle cx="695" cy="140" r="2.6"/><circle cx="705" cy="140" r="2.6"/><circle cx="715" cy="140" r="2.6"/><circle cx="725" cy="140" r="2.6" class="u"/><circle cx="735" cy="140" r="2.6" class="u"/><circle cx="745" cy="140" r="2.6" class="u"/><circle cx="755" cy="140" r="2.6" class="u"/></g></svg>
+    <h1>Helyasadat <span class="keep">Hashemi Aghdam</span></h1>
+    <p class="role">M.Sc. student in Computer Engineering, Bilkent University</p>
+    <ul class="contact">
+      <li><a href="mailto:helyasadat@bilkent.edu.tr">helyasadat@bilkent.edu.tr</a></li>
+      <li><a href="https://scholar.google.com/citations?user=-2s1hzkAAAAJ">Google Scholar</a></li>
+      <li><a href="https://github.com/helya02">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/helyasadat-hashemi-aghdam-b2637b21a">LinkedIn</a></li>
+      <li><a class="cv-link" href="cv.pdf">CV (PDF)</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <div class="intro">
+      <div class="intro-text">
+        <p>I am an M.Sc. student in Computer Engineering at Bilkent University, advised by <a href="http://ciceklab.cs.bilkent.edu.tr/ercument">Dr. A. Ercüment Çiçek</a>. I develop machine learning methods for RNA design, including generative models that design RNA to bind proteins and small molecules, and <span class="keep">RNA–protein</span> interface predictors that generalise beyond biased structural benchmarks.</p>
+        <p>Before Bilkent, I completed my B.Sc. in Computer Engineering at the University of Tabriz. I am applying to Ph.D. programmes starting in 2027.</p>
+      </div>
+      <!-- Upload a portrait named photo.jpg next to this file and it appears here automatically. -->
+      <figure class="portrait">
+        <img src="photo.jpg" alt="Photo of Helyasadat Hashemi Aghdam" width="300" height="375" onerror="this.parentNode.remove()">
+      </figure>
+    </div>
+
+    <section aria-labelledby="publications">
+      <h2 id="publications">Publications</h2>
+
+      <h3>Journal articles</h3>
+      <ol class="entries">
+        <li class="entry">
+          <span class="when">2025</span>
+          <div>
+            <p class="title"><a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1013541">RNAtranslator: Modeling protein-conditional RNA design as sequence-to-sequence natural language translation</a></p>
+            <p class="detail">Sobhan&nbsp;Shukueian&nbsp;Tabrizi, Sina&nbsp;Barazandeh, <strong>Helyasadat&nbsp;Hashemi&nbsp;Aghdam</strong>, A.&nbsp;Ercüment&nbsp;Çiçek</p>
+            <p class="detail"><cite>PLOS Computational Biology</cite> 21(10), e1013541. Presented at ISMB/ECCB 2025.</p>
+          </div>
+        </li>
+      </ol>
+
+      <h3>Preprints</h3>
+      <ol class="entries">
+        <li class="entry">
+          <span class="when">2025</span>
+          <div>
+            <p class="title"><a href="https://www.biorxiv.org/content/10.1101/2025.11.24.690191v1">RNA-X: Modeling RNA interactions to design binder RNA and simultaneously target multiple molecules of different types</a></p>
+            <p class="detail">Sobhan&nbsp;Shukueian&nbsp;Tabrizi, <strong>Helyasadat&nbsp;Hashemi&nbsp;Aghdam</strong>, A.&nbsp;Ercüment&nbsp;Çiçek</p>
+            <p class="detail"><cite>bioRxiv</cite> 2025.11.24.690191. Presented at RECOMB-RSG 2026.</p>
+          </div>
+        </li>
+      </ol>
+
+      <h3>Submitted manuscripts</h3>
+      <ol class="entries">
+        <li class="entry">
+          <span class="when">2026</span>
+          <div>
+            <p class="title">From Biased Structural Benchmarks to Generalizable <span class="keep">RNA–Protein</span> Interface Prediction</p>
+            <p class="detail"><strong>Helyasadat&nbsp;Hashemi&nbsp;Aghdam</strong>, Sobhan&nbsp;Shukueian&nbsp;Tabrizi, A.&nbsp;Ercüment&nbsp;Çiçek</p>
+            <p class="detail">Submitted to NeurIPS 2026.</p>
+          </div>
+        </li>
+        <li class="entry">
+          <span class="when">2026</span>
+          <div>
+            <p class="title">Cross-Target Transfer Enables Small-Molecule-Binding RNA Generation</p>
+            <p class="detail"><strong>Helyasadat&nbsp;Hashemi&nbsp;Aghdam</strong>, Orhun&nbsp;Ege&nbsp;Çelik, Sobhan&nbsp;Shukueian&nbsp;Tabrizi, A.&nbsp;Ercüment&nbsp;Çiçek</p>
+            <p class="detail">Submitted to NeurIPS 2026.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="education">
+      <h2 id="education">Education</h2>
+      <ol class="entries">
+        <li class="entry">
+          <span class="when">2024–2027</span>
+          <div>
+            <p class="title">M.Sc. in Computer Engineering (expected 2027)</p>
+            <p>Bilkent University, Ankara, Turkey</p>
+            <p class="detail">Advised by Dr. A. Ercüment Çiçek. CGPA 3.80/4.00.</p>
+          </div>
+        </li>
+        <li class="entry">
+          <span class="when">2020–2024</span>
+          <div>
+            <p class="title">B.Sc. in Computer Engineering</p>
+            <p>University of Tabriz, Tabriz, Iran</p>
+            <p class="detail">Final project on variational contrastive self-supervised learning for disentangled representations. GPA 18.27/20 (3.79/4.00).</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="teaching">
+      <h2 id="teaching">Teaching</h2>
+      <ol class="entries">
+        <li class="entry">
+          <span class="when">2026</span>
+          <div><p>Senior Design Project II, Bilkent University</p><p class="detail">Teaching assistant for Mert Bıçakçı</p></div>
+        </li>
+        <li class="entry">
+          <span class="when">2026</span>
+          <div><p>Algorithms and Programming II, Bilkent University</p><p class="detail">Teaching assistant for Prof. Uğur Güdükbay</p></div>
+        </li>
+        <li class="entry">
+          <span class="when">2024–2025</span>
+          <div><p>Algorithms and Programming I, Bilkent University</p><p class="detail">Teaching assistant for Prof. Uğur Doğrusöz</p></div>
+        </li>
+        <li class="entry">
+          <span class="when">2023</span>
+          <div><p>Advanced Programming, University of Tabriz</p><p class="detail">Teaching assistant for Dr. Sokhandan</p></div>
+        </li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="service">
+      <h2 id="service">Academic service</h2>
+      <ol class="entries compact">
+        <li class="entry"><span class="when">2026</span><div><p>Reviewer for <cite>Bioinformatics</cite> (Oxford University Press)</p></div></li>
+        <li class="entry"><span class="when">2026</span><div><p>Reviewer for RECOMB 2026</p></div></li>
+        <li class="entry"><span class="when">2026</span><div><p>Mentored an internship student in the Çiçek Lab, Bilkent University</p></div></li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="awards">
+      <h2 id="awards">Awards and honours</h2>
+      <ol class="entries">
+        <li class="entry">
+          <span class="when">2024</span>
+          <div><p>Fully funded admission to the M.Sc. in Computer Engineering, Bilkent University</p><p class="detail">Scholarship with research and teaching assistantships</p></div>
+        </li>
+        <li class="entry">
+          <span class="when">2023</span>
+          <div><p>Top 10% of the Computer Engineering cohort, University of Tabriz</p></div>
+        </li>
+        <li class="entry">
+          <span class="when">2018</span>
+          <div><p>Full scholarship for undergraduate study</p><p class="detail">Ranked in the top 2% of more than 150,000 candidates in Iran’s national university entrance exam (Konkur)</p></div>
+        </li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="projects">
+      <h2 id="projects">Selected projects</h2>
+
+      <h3>Computational biology</h3>
+      <ol class="entries">
+        <li class="entry"><span class="when">2026</span><div><p>Off-target gRNA identification in CRISPR systems</p><p class="detail">Information Retrieval Systems course</p></div></li>
+        <li class="entry"><span class="when">2026</span><div><p><span class="keep">RNA–protein</span> docking with diffusion models</p><p class="detail">Deep Generative Models course</p></div></li>
+        <li class="entry"><span class="when">2026</span><div><p>Reinforcement learning agent that defends genomic beacons against reconstruction attacks</p><p class="detail">Data Privacy course</p></div></li>
+        <li class="entry"><span class="when">2025</span><div><p>Enhancing <span class="keep">protein–drug</span> interaction prediction with contrastive loss and RNN sequence encoders</p><p class="detail">Machine Learning course</p></div></li>
+        <li class="entry"><span class="when">2024</span><div><p>RNA sequence generation and optimisation with GANs and reinforcement learning</p><p class="detail">Deep Learning course</p></div></li>
+      </ol>
+
+      <h3>Deep learning</h3>
+      <ol class="entries">
+        <li class="entry"><span class="when">2024</span><div><p>Knowledge distillation in large language models</p><p class="detail">Deep Learning course</p></div></li>
+        <li class="entry"><span class="when">2023</span><div><p>Semantic segmentation on the CamVid dataset with U-Net, PSP-Net and FPN in PyTorch</p></div></li>
+        <li class="entry"><span class="when">2023</span><div><p>Generative models in PyTorch: DCGAN face synthesis on CelebA, CycleGAN image-to-image translation, and a conditional GAN that colourises greyscale images</p></div></li>
+        <li class="entry"><span class="when">2023</span><div><p>DeepDream in PyTorch, using a VGG16 backbone written from scratch and trained on CIFAR-10</p></div></li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="skills">
+      <h2 id="skills">Skills</h2>
+      <dl class="skills">
+        <div><dt>Programming</dt><dd>Python, C#, JavaScript, R</dd></div>
+        <div><dt>Machine learning</dt><dd>PyTorch, TensorFlow, Hugging Face, distributed and multi-GPU training</dd></div>
+        <div><dt>Computational biology</dt><dd>NCBI, Bioconductor, Biopython, GWAS Catalog, PyMOL, ChimeraX, molecular dynamics (OpenMM), docking tools</dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <footer>
+    <p>Last updated September 2026.</p>
+    <p>The arcs at the top trace the base pairs of yeast tRNA<sup>Phe</sup>.</p>
+  </footer>
+</div>
+</body>
+</html>
