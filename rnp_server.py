@@ -42,7 +42,7 @@ import openmm.app as app
 from openmm import unit
 from pdbfixer import PDBFixer
 
-VERSION = "2026.09.12-2"
+VERSION = "2026.09.12-1"
 KB_KJ = 0.008314462618  # kJ/mol/K
 HERE = os.path.dirname(os.path.abspath(__file__))
 

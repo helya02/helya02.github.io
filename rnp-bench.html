@@ -186,12 +186,6 @@ pre.code{
 .nowrap{white-space:nowrap}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 [hidden]{display:none!important}
-.drop.small{padding:24px 20px}
-#trajloader .drop h3{font-size:17px;margin:0 0 6px;font-weight:620}
-#trajloader .drop.loaded{padding:12px 16px;display:flex;align-items:center;justify-content:center;gap:14px}
-#trajloader .drop.loaded h3{font-size:14px;margin:0;font-weight:600;color:var(--muted)}
-#trajloader .drop.loaded p,#trajloader .drop.loaded .row{display:none}
-#trajloader .drop.loaded .btn{padding:4px 10px;font-size:13px}
 #runconditions #runplots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px}
 @media(max-width:900px){#runconditions #runplots{grid-template-columns:minmax(0,1fr)}}
 </style>
@@ -4120,7 +4114,7 @@ function systemReport(ctx){
    Application
    ===================================================================== */
 
-const APP_VERSION = '2026.09.12-2';
+const APP_VERSION = '2026.09.12-1';
 
 /* Which steps exist. 'auto' shows the Run step wherever a backend can actually
    be — served by rnp_server.py, or opened on this machine — and hides it on a
@@ -4171,7 +4165,6 @@ function applyRunMode(on){
 
   $('runcsv').hidden=!on;                       // downloads from the backend
   handoffCard(!on);
-  trajLoaderCard(!on);
   conditionsCard(!on);
   seriesLoaderCard(!on);
   relocate(plots, on ? null : $('runconditions'));
@@ -4202,90 +4195,6 @@ function handoffCard(show){
   const view=$('view-files');
   view.insertBefore(card, view.children[1] || null);
   relocate($('readiness'), card);
-}
-
-/* The Trajectory step leads with the thing you came here to do: load frames.
-   Dropping files anywhere already worked, but nothing said so, and ingest()
-   ends on the Structure step, which reads as the page ignoring you. */
-function trajLoaderCard(show){
-  let card=$('trajloader');
-  if(!show){ if(card) card.parentNode.removeChild(card); return; }
-  if(card) return;
-  card=document.createElement('div');
-  card.className='card';
-  card.id='trajloader';
-  card.innerHTML=
-    '<div class="drop small" id="trajdrop">'+
-      '<h3>Drop your trajectory here</h3>'+
-      '<p>A multi-model PDB from any engine, or a topology file together with its frame files. '+
-      'Everything below then works on it.</p>'+
-      '<div class="row" style="justify-content:center">'+
-        '<button class="btn" id="picktraj">Choose files</button>'+
-        '<input type="file" id="trajinput" multiple hidden accept=".pdb,.ent,.cif,.mmcif,.gro,.txt">'+
-      '</div>'+
-      '<div id="trajloaderr" class="err" style="margin-top:10px"></div>'+
-    '</div>'+
-    '<div class="note"><strong>Strip the solvent first</strong>'+
-    'A solvated complex is mostly water, and a multi-model PDB of all of it runs to hundreds of megabytes. '+
-    'Keep the solute and save every few picoseconds rather than every step.</div>'+
-    '<details style="margin-top:10px"><summary class="dim" style="cursor:pointer;font-size:13px">Converting from GROMACS, AMBER or DCD</summary>'+
-    '<pre class="code" style="font-size:11.5px">'+
-    '# GROMACS — choose a solute group when prompted\n'+
-    'gmx trjconv -s topol.tpr -f traj_comp.xtc -o traj.pdb -pbc mol -dt 100\n\n'+
-    '# AMBER — cpptraj writes one multi-model PDB\n'+
-    'parm system.prmtop\n'+
-    'trajin prod.nc 1 last 10\n'+
-    'strip :WAT,Na+,Cl-,K+\n'+
-    'autoimage\n'+
-    'trajout traj.pdb pdb\n'+
-    'run\n\n'+
-    '# anything MDTraj reads, including .dcd\n'+
-    'import mdtraj as md\n'+
-    "t = md.load('trajectory.dcd', top='topology.pdb', stride=10)\n"+
-    "t.remove_solvent().save_pdb('traj.pdb')"+
-    '</pre></details>';
-  const view=$('view-traj');
-  view.insertBefore(card, view.firstChild);
-
-  const zone=$('trajdrop');
-  ['dragenter','dragover'].forEach(ev=>zone.addEventListener(ev,e=>{e.preventDefault();zone.classList.add('hot');}));
-  ['dragleave','drop'].forEach(ev=>zone.addEventListener(ev,e=>{e.preventDefault();zone.classList.remove('hot');}));
-  zone.addEventListener('drop',e=>{ if(e.dataTransfer.files.length) takeTrajectory([...e.dataTransfer.files]); });
-  $('picktraj').addEventListener('click',()=>$('trajinput').click());
-  $('trajinput').addEventListener('change',e=>{ if(e.target.files.length) takeTrajectory([...e.target.files]); });
-  refreshTrajLoader();
-}
-
-/* Load, then stay here rather than jumping back to the Structure step. */
-async function takeTrajectory(files){
-  $('trajloaderr').textContent='reading '+files.length+' file'+(files.length===1?'':'s')+'…';
-  await loadFiles(files);
-  $('trajloaderr').textContent=$('loaderr').textContent;
-  showView('traj');
-  refreshTrajLoader();
-  if(A.S&&A.S.nFrames>1) $('trajstatus').textContent=
-    `${A.S.nFrames} frames loaded — press Analyse trajectory`;
-}
-
-/* Once frames are in, the box steps out of the way. */
-function refreshTrajLoader(){
-  const card=$('trajloader');
-  if(!card) return;
-  const has=!!(A.S&&A.S.nFrames>1), zone=card.querySelector('.drop');
-  zone.classList.toggle('loaded', has);
-  zone.querySelector('h3').textContent=has
-    ? `${A.S.nFrames} frames loaded`
-    : 'Drop your trajectory here';
-  card.querySelectorAll('.note, details').forEach(n=>{ n.hidden=has; });
-  /* the compact row keeps one way back to the file picker */
-  let swap=$('trajswap');
-  if(has && !swap){
-    swap=document.createElement('button');
-    swap.className='btn ghost small'; swap.id='trajswap'; swap.textContent='Load a different one';
-    swap.addEventListener('click',()=>$('trajinput').click());
-    zone.appendChild(swap);
-  }
-  if(swap) swap.hidden=!has;
 }
 
 /* Step 8 gains a home for the temperature, energy, density and volume curves. */
@@ -4350,7 +4259,7 @@ function showView(name){
   if(name==='run'){ requestAnimationFrame(()=>{drawRunPlots(); showReadiness();}); }
   if(name==='plan') updatePlan();
   if(name==='files'){ updateFiles(); if(!RUNMODE.on && A.S) showReadiness(); }
-  if(name==='traj'){ mountViewer('motionhost'); refreshTrajLoader();
+  if(name==='traj'){ mountViewer('motionhost');
     requestAnimationFrame(()=>{ resizeViewer(); redrawTrajPlots(); motionInit(); }); }
   if(name!=='traj'&&typeof motionPlay==='function'&&M.playing) motionPlay(false);
 }
