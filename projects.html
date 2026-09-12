@@ -1,36 +1,123 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="sage">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Projects | Helyasadat Hashemi Aghdam</title>
 <meta name="description" content="Course and independent projects in computational biology and deep learning, plus technical skills.">
 <meta name="author" content="Helyasadat Hashemi Aghdam">
-<meta name="theme-color" content="#FFF9FB">
+<meta name="theme-color" content="#FAFAF7">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Projects | Helyasadat Hashemi Aghdam">
 <meta property="og:description" content="Course and independent projects in computational biology and deep learning, plus technical skills.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23FDEBF1'/%3E%3Cpath d='M11 5c10 5 10 17 0 22' fill='none' stroke='%23E27FA0' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M21 5c-10 5-10 17 0 22' fill='none' stroke='%23B8A2EC' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23EDF0EA'/%3E%3Cpath d='M11 5c10 5 10 17 0 22' fill='none' stroke='%234F6F5B' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M21 5c-10 5-10 17 0 22' fill='none' stroke='%23B9CBBD' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Ysabeau+Office:ital,wght@0,400;0,500;0,600;1,400&display=swap">
 <script>document.documentElement.classList.add("js");</script>
 <style>
 :root {
-  --paper: #FFF9FB;
-  --blush: #FDEBF1;
-  --blush-2: #F9DDE8;
-  --line: #F2DDE6;
-  --berry: #B13F6A;
-  --berry-deep: #8F2F55;
-  --lilac: #CBB8F1;
-  --lilac-soft: #F2ECFB;
-  --ink: #3D2645;
-  --muted: #7A5F79;
   --display: "Cormorant Garamond", "Cormorant", Garamond, "Times New Roman", serif;
   --text: "Ysabeau Office", "Ysabeau", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   color-scheme: light;
 }
+
+/* ---------------------------------------------------------------------------
+   Themes. Every colour on the site and in the molecules comes from here, so
+   switching data-theme on <html> reskins both. The --m-* values are read by
+   molecules.js at startup.
+   --------------------------------------------------------------------------- */
+
+/* Sage — warm off-white, muted eucalyptus. The default. */
+:root, [data-theme="sage"] {
+  --paper: #FAFAF7;
+  --tint: #EDF0EA;
+  --tint-2: #E1E8DE;
+  --line: #E6E8DF;
+  --accent: #4F6F5B;
+  --accent-deep: #3B5645;
+  --soft: #B9CBBD;
+  --soft-tint: #F1F3ED;
+  --ink: #2B322C;
+  --muted: #6A7268;
+  --stage-1: #FFFFFF;
+  --stage-2: #F4F6F1;
+  --stage-3: #DCE5D7;
+  --m-pearl-1: #A7BFA6;
+  --m-pearl-2: #C3BEA2;
+  --m-pearl-3: #E6E6DC;
+  --m-bond-1: #9CB59B;
+  --m-bond-2: #BCB69A;
+  --m-bond-3: #CFCFC2;
+  --m-hbond: #DCDDD0;
+  --m-a: #7FA8C9;
+  --m-u: #C98F8A;
+  --m-g: #DDC17E;
+  --m-c: #A79CC4;
+  --m-shade: #2B322C;
+  --m-sheen: rgba(150, 175, 155, 0.30);
+}
+
+/* Periwinkle — cool paper, muted indigo. */
+[data-theme="periwinkle"] {
+  --paper: #FAFAFC;
+  --tint: #ECEEF7;
+  --tint-2: #DFE3F1;
+  --line: #E3E5EF;
+  --accent: #55679F;
+  --accent-deep: #3F4E80;
+  --soft: #B7C0E0;
+  --soft-tint: #F0F2FA;
+  --ink: #2A2F44;
+  --muted: #686E88;
+  --stage-1: #FFFFFF;
+  --stage-2: #F3F5FC;
+  --stage-3: #DADFF0;
+  --m-pearl-1: #A6AFDC;
+  --m-pearl-2: #BFB9D6;
+  --m-pearl-3: #E6E7EF;
+  --m-bond-1: #949ECC;
+  --m-bond-2: #ADA7C8;
+  --m-bond-3: #C8CAD9;
+  --m-hbond: #D8DAE6;
+  --m-a: #86BCA6;
+  --m-u: #C4909F;
+  --m-g: #DCC286;
+  --m-c: #9C93C6;
+  --m-shade: #2A2F44;
+  --m-sheen: rgba(150, 160, 200, 0.30);
+}
+
+/* Stone — near-monochrome, one slate accent. */
+[data-theme="stone"] {
+  --paper: #FBFAF9;
+  --tint: #F0EEEB;
+  --tint-2: #E5E2DD;
+  --line: #E8E5E0;
+  --accent: #4A5157;
+  --accent-deep: #33383D;
+  --soft: #C3C0B9;
+  --soft-tint: #F2F1EE;
+  --ink: #2A2D30;
+  --muted: #6E706F;
+  --stage-1: #FFFFFF;
+  --stage-2: #F5F3F0;
+  --stage-3: #DFDBD3;
+  --m-pearl-1: #B7B2A7;
+  --m-pearl-2: #C7C3BA;
+  --m-pearl-3: #E8E6E1;
+  --m-bond-1: #ABA69A;
+  --m-bond-2: #BAB5AB;
+  --m-bond-3: #D2CFC9;
+  --m-hbond: #DEDCD6;
+  --m-a: #8FAFA2;
+  --m-u: #BE9793;
+  --m-g: #D6BE8D;
+  --m-c: #A0A0BE;
+  --m-shade: #2A2D30;
+  --m-sheen: rgba(165, 165, 160, 0.28);
+}
+
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body {
@@ -42,17 +129,17 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
-::selection { background: var(--blush-2); color: var(--ink); }
+::selection { background: var(--tint-2); color: var(--ink); }
 p { margin: 0; text-wrap: pretty; }
 img { max-width: 100%; }
 a {
-  color: var(--berry);
+  color: var(--accent);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.22em;
-  text-decoration-color: color-mix(in srgb, var(--berry) 35%, transparent);
+  text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent);
 }
-a:hover { color: var(--berry-deep); text-decoration-color: currentColor; }
-:focus-visible { outline: 2px solid var(--berry); outline-offset: 3px; border-radius: 6px; }
+a:hover { color: var(--accent-deep); text-decoration-color: currentColor; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
 cite { font-style: italic; }
 .keep { white-space: nowrap; }
 .skip {
@@ -73,26 +160,26 @@ cite { font-style: italic; }
   font-family: var(--display); font-size: 1.5rem; font-weight: 600; line-height: 1.1;
   color: var(--ink); text-decoration: none;
 }
-.wordmark:hover { color: var(--berry); }
+.wordmark:hover { color: var(--accent); }
 .site-nav { display: flex; align-items: center; gap: 0.25rem; }
 .site-nav a {
   color: var(--ink); text-decoration: none; font-weight: 500; font-size: 0.98rem;
   padding: 0.38rem 0.9rem; border-radius: 999px;
 }
-.site-nav a:hover { background: var(--blush); color: var(--berry-deep); }
-.site-nav a[aria-current="page"] { background: var(--blush-2); color: var(--berry-deep); }
-.site-nav .nav-cv { margin-left: 0.5rem; border: 1px solid var(--berry); color: var(--berry); }
-.site-nav .nav-cv:hover { background: var(--berry); color: #fff; }
+.site-nav a:hover { background: var(--tint); color: var(--accent-deep); }
+.site-nav a[aria-current="page"] { background: var(--tint-2); color: var(--accent-deep); }
+.site-nav .nav-cv { margin-left: 0.5rem; border: 1px solid var(--accent); color: var(--accent); }
+.site-nav .nav-cv:hover { background: var(--accent); color: #fff; }
 .menu-btn {
   display: none; font: inherit; font-weight: 600; color: var(--ink); cursor: pointer;
-  background: var(--blush); border: 0; border-radius: 999px; padding: 0.45rem 1.1rem;
+  background: var(--tint); border: 0; border-radius: 999px; padding: 0.45rem 1.1rem;
 }
 
 /* ---------- molecule stage ---------- */
-.stage { margin: 0; }
+.stage { margin: 0 0 0.9rem; }
 .stage-disc {
   position: relative; aspect-ratio: 1; border-radius: 50%;
-  background: radial-gradient(circle at 38% 32%, #fff 0%, #FFF2F7 40%, var(--blush-2) 74%, #ECE2FA 100%);
+  background: radial-gradient(circle at 38% 32%, var(--stage-1) 0%, var(--stage-2) 42%, var(--stage-3) 100%);
 }
 .stage-disc::after {
   content: ""; position: absolute; inset: -0.85rem; border-radius: 50%;
@@ -103,7 +190,6 @@ cite { font-style: italic; }
   cursor: grab; touch-action: pan-y;
 }
 .stage canvas.is-dragging { cursor: grabbing; }
-.stage figcaption { position: relative; margin: 1.7rem -4rem 0; text-align: center; text-wrap: balance; font-size: 0.9rem; line-height: 1.5; color: var(--muted); }
 
 /* ---------- home ---------- */
 .hero {
@@ -112,7 +198,7 @@ cite { font-style: italic; }
 }
 .avatar {
   display: block; width: 5.5rem; height: 5.5rem; margin-bottom: 1.6rem;
-  border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 5px var(--paper), 0 0 0 6px var(--lilac);
+  border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 5px var(--paper), 0 0 0 6px var(--soft);
 }
 .hero h1 {
   margin: 0; font-family: var(--display); font-weight: 600;
@@ -125,12 +211,12 @@ cite { font-style: italic; }
 .btn {
   display: inline-flex; align-items: center; padding: 0.7rem 1.4rem;
   font-weight: 600; font-size: 1rem; text-decoration: none;
-  border: 1px solid var(--berry); border-radius: 999px;
+  border: 1px solid var(--accent); border-radius: 999px;
 }
-.btn-primary { background: var(--berry); color: #fff; }
-.btn-primary:hover { background: var(--berry-deep); border-color: var(--berry-deep); color: #fff; }
-.btn-ghost { color: var(--berry); }
-.btn-ghost:hover { background: var(--blush); color: var(--berry-deep); }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-deep); border-color: var(--accent-deep); color: #fff; }
+.btn-ghost { color: var(--accent); }
+.btn-ghost:hover { background: var(--tint); color: var(--accent-deep); }
 .links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.3rem; margin: 1.7rem 0 0; padding: 0; list-style: none; font-size: 0.98rem; }
 .hero .stage { width: min(100%, 30rem); justify-self: center; }
 
@@ -143,8 +229,8 @@ cite { font-style: italic; }
 }
 .h3 { margin: 0 0 0.6rem; font-size: 1rem; font-weight: 600; }
 .chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0; padding: 0; list-style: none; }
-.chips li { padding: 0.42rem 1rem; border-radius: 999px; background: var(--blush); color: var(--berry-deep); font-weight: 500; font-size: 0.98rem; line-height: 1.4; }
-.chips.soft li { background: var(--lilac-soft); color: var(--ink); }
+.chips li { padding: 0.42rem 1rem; border-radius: 999px; background: var(--tint); color: var(--accent-deep); font-weight: 500; font-size: 0.98rem; line-height: 1.4; }
+.chips.soft li { background: var(--soft-tint); color: var(--ink); }
 .more { margin-top: 1.2rem; font-weight: 500; }
 
 .list { margin: 0; padding: 0; list-style: none; }
@@ -168,7 +254,6 @@ cite { font-style: italic; }
 }
 .lede { margin-top: 1.2rem; max-width: 36rem; font-size: 1.15rem; color: var(--muted); }
 .page-head .stage { width: clamp(10rem, 7rem + 8vw, 14.5rem); margin-right: 1rem; }
-.page-head .stage figcaption { margin-top: 1.5rem; font-size: 0.85rem; }
 .page-head .stage { position: relative; }
 
 /* ---------- publications ---------- */
@@ -180,19 +265,19 @@ cite { font-style: italic; }
 .pub h3 { margin: 0; font-family: var(--display); font-size: 1.65rem; font-weight: 600; line-height: 1.2; }
 .pub h3 a {
   color: var(--ink); text-decoration: none;
-  background: linear-gradient(var(--blush-2), var(--blush-2)) 0 88% / 100% 0.34em no-repeat;
+  background: linear-gradient(var(--tint-2), var(--tint-2)) 0 88% / 100% 0.34em no-repeat;
 }
-.pub h3 a:hover { color: var(--berry-deep); }
+.pub h3 a:hover { color: var(--accent-deep); }
 .authors { margin-top: 0.55rem; color: var(--muted); }
 .authors strong { color: var(--ink); font-weight: 600; }
 .venue { margin-top: 0.15rem; color: var(--muted); }
 .tags { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-top: 0.9rem; }
-.tag { padding: 0.2rem 0.8rem; border-radius: 999px; background: var(--lilac-soft); font-size: 0.88rem; }
+.tag { padding: 0.2rem 0.8rem; border-radius: 999px; background: var(--soft-tint); font-size: 0.88rem; }
 .pill-link {
-  padding: 0.22rem 0.9rem; border: 1px solid var(--berry); border-radius: 999px;
+  padding: 0.22rem 0.9rem; border: 1px solid var(--accent); border-radius: 999px;
   font-size: 0.9rem; font-weight: 600; text-decoration: none;
 }
-.pill-link:hover { background: var(--berry); color: #fff; }
+.pill-link:hover { background: var(--accent); color: #fff; }
 
 /* ---------- projects ---------- */
 .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 2.75rem; margin: 0; padding: 0; list-style: none; }
@@ -206,12 +291,12 @@ cite { font-style: italic; }
 .timeline { position: relative; margin: 0; padding: 0 0 0 2.4rem; list-style: none; }
 .timeline::before {
   content: ""; position: absolute; left: 0.47rem; top: 0.7rem; bottom: 2.4rem; width: 1px;
-  background: linear-gradient(var(--lilac), var(--blush-2));
+  background: linear-gradient(var(--soft), var(--tint-2));
 }
 .timeline li { position: relative; padding-bottom: 2.4rem; }
 .timeline li::before {
   content: ""; position: absolute; left: -2.4rem; top: 0.42rem; width: 1rem; height: 1rem; border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #fff, var(--blush-2) 55%, var(--lilac));
+  background: radial-gradient(circle at 35% 30%, #fff, var(--tint-2) 55%, var(--soft));
   box-shadow: 0 0 0 5px var(--paper);
 }
 .degree { margin: 0.15rem 0 0.2rem; font-family: var(--display); font-size: 1.9rem; font-weight: 600; line-height: 1.15; }
@@ -262,7 +347,7 @@ cite { font-style: italic; }
 .steps li::before {
   content: counter(step); position: absolute; left: 0; top: 0.95rem;
   display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%;
-  background: var(--blush); color: var(--berry-deep);
+  background: var(--tint); color: var(--accent-deep);
   font-family: var(--display); font-size: 1.15rem; font-weight: 700; line-height: 1;
 }
 .step-title { font-weight: 600; }
@@ -272,13 +357,13 @@ cite { font-style: italic; }
   display: grid; grid-template-columns: minmax(0, 1fr) 6.5rem minmax(0, 1fr) 6.5rem minmax(0, 1fr);
   margin: 1.8rem 0 1.6rem;
 }
-.arch-node { padding: 1.1rem 1.15rem 1.2rem; border-radius: 1.1rem; background: var(--blush); }
-.arch-node.lab { background: var(--lilac-soft); }
+.arch-node { padding: 1.1rem 1.15rem 1.2rem; border-radius: 1.1rem; background: var(--tint); }
+.arch-node.lab { background: var(--soft-tint); }
 .arch-name { font-family: var(--display); font-size: 1.4rem; font-weight: 600; line-height: 1.2; }
 .arch-desc { margin-top: 0.35rem; color: var(--muted); font-size: 0.93rem; line-height: 1.55; }
 .arch-link { position: relative; display: flex; align-items: center; justify-content: center; }
-.arch-link::before { content: ""; position: absolute; left: 0.3rem; right: 0.3rem; top: 50%; border-top: 2px solid var(--blush-2); }
-.arch-link.none::before { border-top: 2px dashed var(--lilac); }
+.arch-link::before { content: ""; position: absolute; left: 0.3rem; right: 0.3rem; top: 50%; border-top: 2px solid var(--tint-2); }
+.arch-link.none::before { border-top: 2px dashed var(--soft); }
 .arch-link span {
   position: relative; top: -0.85rem; white-space: nowrap;
   color: var(--muted); font-size: 0.8rem; line-height: 1.3;
@@ -294,11 +379,11 @@ cite { font-style: italic; }
 .choices p { color: var(--muted); font-size: 0.98rem; }
 
 /* ---------- projects page: featured software ---------- */
-.feature { max-width: 52rem; padding: 1.7rem 2rem 1.9rem; border-radius: 1.5rem; background: var(--blush); }
+.feature { max-width: 52rem; padding: 1.7rem 2rem 1.9rem; border-radius: 1.5rem; background: var(--tint); }
 .feature .year { display: block; font-size: 0.9rem; }
 .feature-title { margin: 0.1rem 0 0.45rem; font-family: var(--display); font-size: 2.1rem; font-weight: 600; line-height: 1.1; }
 .feature-title a { color: var(--ink); text-decoration: none; }
-.feature-title a:hover { color: var(--berry-deep); }
+.feature-title a:hover { color: var(--accent-deep); }
 .feature p { max-width: 42rem; }
 .feature .chips { margin-top: 1rem; }
 .feature .chips li { background: var(--paper); }
@@ -310,8 +395,8 @@ cite { font-style: italic; }
   .arch { grid-template-columns: minmax(0, 1fr); }
   .arch-link { min-height: 3.2rem; justify-content: flex-start; padding-left: calc(50% + 0.8rem); }
   .arch-link span { top: 0; }
-  .arch-link::before { left: 50%; right: auto; top: 0.25rem; bottom: 0.25rem; border-top: 0; border-left: 2px solid var(--blush-2); }
-  .arch-link.none::before { border-top: 0; border-left: 2px dashed var(--lilac); }
+  .arch-link::before { left: 50%; right: auto; top: 0.25rem; bottom: 0.25rem; border-top: 0; border-left: 2px solid var(--tint-2); }
+  .arch-link.none::before { border-top: 0; border-left: 2px dashed var(--soft); }
   .feature { padding: 1.4rem 1.3rem 1.6rem; }
 }
 </style>
@@ -340,7 +425,6 @@ cite { font-style: italic; }
       </div>
       <figure class="stage">
         <div class="stage-disc"><canvas data-model="ligand" role="img" aria-label="Rotating 3D ball-and-stick model of theophylline"></canvas></div>
-        <figcaption>Theophylline, ligand of a classic RNA aptamer</figcaption>
       </figure>
     </section>
 
@@ -420,12 +504,26 @@ cite { font-style: italic; }
 
   const TAU = Math.PI * 2;
   const DEG = Math.PI / 180;
+  /* Every colour comes from the CSS theme, so one data-theme switch reskins
+     the site and the molecules together. */
+  const THEME = getComputedStyle(document.documentElement);
+  const v = (name, fallback) => THEME.getPropertyValue(name).trim() || fallback;
   const COL = {
-    pearlPink: "#F6C4D5", pearlLilac: "#D8CAF4", pearl: "#F4E6EE",
-    rose: "#F2A2BA", lilac: "#C3B0EE", mint: "#9FDCC4", butter: "#F8D98F",
-    bondPink: "#EAB3C7", bondLilac: "#CBBBEC", bondSoft: "#DDBFD0", hbond: "#E9D2DF"
+    pearlA: v("--m-pearl-1", "#C9D8C8"),
+    pearlB: v("--m-pearl-2", "#D9D6C4"),
+    pearlN: v("--m-pearl-3", "#E6E6DC"),
+    bondA: v("--m-bond-1", "#B6C8B5"),
+    bondB: v("--m-bond-2", "#CCC8B4"),
+    bondN: v("--m-bond-3", "#CFCFC2"),
+    hbond: v("--m-hbond", "#DCDDD0"),
+    a: v("--m-a", "#7FA8C9"),
+    u: v("--m-u", "#C98F8A"),
+    g: v("--m-g", "#DDC17E"),
+    c: v("--m-c", "#A79CC4"),
+    shade: v("--m-shade", "#2B322C"),
+    sheen: v("--m-sheen", "rgba(150,175,155,0.30)")
   };
-  const BASE = { A: COL.mint, U: COL.rose, G: COL.butter, C: COL.lilac };
+  const BASE = { A: COL.a, U: COL.u, G: COL.g, C: COL.c };
   const PAIR = { A: "U", U: "A", G: "C", C: "G" };
 
   // ---------- vectors ----------
@@ -477,12 +575,12 @@ cite { font-style: italic; }
   }
   function duplex() {
     const seq = "GGACUGCAUGCAGUCC", m = createModel();
-    stem(m, seq, [COL.pearlPink, COL.pearlLilac], [COL.bondPink, COL.bondLilac], (i) => i / (seq.length - 1));
+    stem(m, seq, [COL.pearlA, COL.pearlB], [COL.bondA, COL.bondB], (i) => i / (seq.length - 1));
     return m;
   }
-  function hairpin(loopBead = COL.pearlLilac, loopStick = COL.bondLilac) {
+  function hairpin(loopBead = COL.pearlB, loopStick = COL.bondB) {
     const seq = "GGCACUC", loop = "GAAA", m = createModel(), n = seq.length, total = n + 2;
-    const { s1, s2 } = stem(m, seq, [COL.pearlPink, COL.pearlPink], [COL.bondPink, COL.bondPink], (i) => i / total);
+    const { s1, s2 } = stem(m, seq, [COL.pearlA, COL.pearlA], [COL.bondA, COL.bondA], (i) => i / total);
     const a = s1[n - 1], b = s2[n - 1], mid = mix(a, b, 0.5), out = unit([mid[0], 0, mid[2]]);
     const ctrl = add(add(mid, [0, 16, 0]), scale(out, 6));
     const hub = add(add(mid, [0, 7.5, 0]), scale(out, 2.5));
@@ -505,7 +603,7 @@ cite { font-style: italic; }
   // The helix sits 17.5 Å from the RNA axis, clear of the phosphates, tilted along the
   // cylinder's surface; side chains pointing at the RNA are drawn as positive (rose).
   function rnpComplex() {
-    const m = hairpin(COL.pearlPink, COL.bondPink);
+    const m = hairpin(COL.pearlA, COL.bondA);
     m.atoms.forEach((a) => { a.o *= 0.62; });
     m.bonds.forEach((b) => { b.o *= 0.62; });
     const phi = 16 * DEG, D = 17.5, tilt = 25 * DEG, n = 14;
@@ -521,11 +619,11 @@ cite { font-style: italic; }
         add(scale(u, r * Math.cos(ang)), scale(v, r * Math.sin(ang))));
       const ca = ring(2.3, psi, 0), cb = ring(3.95, psi + 14 * DEG, -0.9);
       const facesRna = Math.cos(psi + 14 * DEG) < -0.3;
-      const side = facesRna ? COL.rose : i % 2 ? COL.butter : COL.mint;
-      if (prev) m.bond(prev, ca, 1.15, COL.bondLilac, o);
-      m.bond(ca, cb, 0.6, COL.bondLilac, o);
+      const side = facesRna ? COL.u : i % 2 ? COL.g : COL.a;
+      if (prev) m.bond(prev, ca, 1.15, COL.bondB, o);
+      m.bond(ca, cb, 0.6, COL.bondB, o);
       m.atom(cb, 0.85, side, o);
-      m.atom(ca, 1.85, COL.pearlLilac, o);
+      m.atom(ca, 1.85, COL.pearlB, o);
       prev = ca;
     }
     return m;
@@ -539,11 +637,11 @@ cite { font-style: italic; }
       const phi = i * 100 * DEG, y = i * 1.5, o = i / (n - 1);
       const ca = helix(2.3, phi, y), cb = helix(3.95, phi + 14 * DEG, y - 0.9);
       const k = i % 7; // amphipathic pattern: hydrophobic stripe at heptad a/d/e
-      const side = k === 0 || k === 3 || k === 4 ? COL.butter : k === 1 || k === 5 ? COL.rose : COL.mint;
-      if (prev) m.bond(prev, ca, 1.15, COL.bondLilac, o);
-      m.bond(ca, cb, 0.6, COL.bondLilac, o);
+      const side = k === 0 || k === 3 || k === 4 ? COL.g : k === 1 || k === 5 ? COL.u : COL.a;
+      if (prev) m.bond(prev, ca, 1.15, COL.bondB, o);
+      m.bond(ca, cb, 0.6, COL.bondB, o);
       m.atom(cb, 0.85, side, o);
-      m.atom(ca, 1.85, COL.pearlLilac, o);
+      m.atom(ca, 1.85, COL.pearlB, o);
       prev = ca;
     }
     return m;
@@ -562,13 +660,13 @@ cite { font-style: italic; }
     for (let j = 0; j < per; j++) m.bond(pts[j], pts[raw.length - 1 - j], 0.45, COL.hbond, 0.9);
     pts.forEach((p, i) => {
       const o = i / (pts.length - 1);
-      if (i) m.bond(pts[i - 1], p, 0.85, COL.bondPink, o);
+      if (i) m.bond(pts[i - 1], p, 0.85, COL.bondA, o);
       if (raw[i][2] !== 0) {
         const cb = twist([raw[i][0], raw[i][1], raw[i][2] + Math.sign(raw[i][2]) * 2.3]);
-        m.bond(p, cb, 0.7, COL.bondPink, o);
-        m.atom(cb, 0.95, COL.butter, o);
+        m.bond(p, cb, 0.7, COL.bondA, o);
+        m.atom(cb, 0.95, COL.g, o);
       }
-      m.atom(p, 1.6, COL.pearlPink, o);
+      m.atom(p, 1.6, COL.pearlA, o);
     });
     return m;
   }
@@ -589,14 +687,14 @@ cite { font-style: italic; }
       const pa = P[a], pb = P[b];
       if (order === 2) {
         const off = scale(unit(cross(sub(pb, pa), [0, 0, 1])), 0.17);
-        m.bond(add(pa, off), add(pb, off), 0.13, COL.bondSoft, 0.45);
-        m.bond(sub(pa, off), sub(pb, off), 0.13, COL.bondSoft, 0.45);
+        m.bond(add(pa, off), add(pb, off), 0.13, COL.bondN, 0.45);
+        m.bond(sub(pa, off), sub(pb, off), 0.13, COL.bondN, 0.45);
       } else {
-        m.bond(pa, pb, 0.23, COL.bondSoft, 0.45);
+        m.bond(pa, pb, 0.23, COL.bondN, 0.45);
       }
     });
     Object.keys(P).forEach((k, i) => {
-      const c = k[0] === "N" ? COL.lilac : k[0] === "O" ? COL.rose : COL.pearl;
+      const c = k[0] === "N" ? COL.c : k[0] === "O" ? COL.u : COL.pearlN;
       m.atom(P[k], k[0] === "O" ? 0.46 : 0.5, c, i / 12);
     });
     return m;
@@ -632,7 +730,7 @@ cite { font-style: italic; }
   const hexRgb = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
   const blend = (a, b, t) => a.map((v, i) => Math.round(v + (b[i] - v) * t));
   const css = (c) => `rgb(${c[0]},${c[1]},${c[2]})`;
-  const INK = [61, 38, 69], WHITE = [255, 255, 255];
+  const INK = hexRgb(COL.shade), WHITE = [255, 255, 255];
   const sprites = new Map();
   function pearl(color) {
     let cv = sprites.get(color);
@@ -650,8 +748,8 @@ cite { font-style: italic; }
     g.fillStyle = body;
     g.beginPath(); g.arc(S / 2, S / 2, S / 2 - 1, 0, TAU); g.fill();
     const sheen = g.createRadialGradient(S * 0.66, S * 0.74, 0, S * 0.66, S * 0.74, S * 0.32);
-    sheen.addColorStop(0, "rgba(205,190,255,0.38)");
-    sheen.addColorStop(1, "rgba(205,190,255,0)");
+    sheen.addColorStop(0, COL.sheen);
+    sheen.addColorStop(1, "transparent");
     g.fillStyle = sheen;
     g.beginPath(); g.arc(S / 2, S / 2, S / 2 - 1, 0, TAU); g.fill();
     sprites.set(color, cv);
