@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Projects | Helyasadat Hashemi Aghdam</title>
-<meta name="description" content="Course and independent projects in computational biology and deep learning, plus technical skills.">
+<title>RNP Bench | Helyasadat Hashemi Aghdam</title>
+<meta name="description" content="RNP Bench, a browser workbench for RNA–protein molecular dynamics with all-atom OpenMM runs on a lab GPU: what it does and where the simulation runs.">
 <meta name="author" content="Helyasadat Hashemi Aghdam">
 <meta name="theme-color" content="#FFF9FB">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Projects | Helyasadat Hashemi Aghdam">
-<meta property="og:description" content="Course and independent projects in computational biology and deep learning, plus technical skills.">
+<meta property="og:title" content="RNP Bench | Helyasadat Hashemi Aghdam">
+<meta property="og:description" content="RNP Bench, a browser workbench for RNA–protein molecular dynamics with all-atom OpenMM runs on a lab GPU: what it does and where the simulation runs.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23FDEBF1'/%3E%3Cpath d='M11 5c10 5 10 17 0 22' fill='none' stroke='%23E27FA0' stroke-width='2.6' stroke-linecap='round'/%3E%3Cpath d='M21 5c-10 5-10 17 0 22' fill='none' stroke='%23B8A2EC' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -335,67 +335,133 @@ cite { font-style: italic; }
   <main id="main">
     <section class="page-head">
       <div>
-        <h1>Projects</h1>
-        <p class="lede">Software, course projects and independent work in computational biology and deep learning, plus the tools I use.</p>
+        <h1>RNP Bench</h1>
+        <p class="lede">A workbench for RNA–protein molecular dynamics that runs entirely in your browser. It prepares a complex, checks what would break the topology build, writes inputs for GROMACS, AMBER and OpenMM, and analyses the trajectory that comes back.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="rnp-bench.html">Open RNP Bench</a>
+          <a class="btn btn-ghost" href="rnp-bench.html?pdb=1URN">Try it on 1URN</a>
+        </div>
+        <p class="action-note">1URN is the U1A protein bound to its RNA hairpin, the textbook RRM–RNA complex and small enough to explore quickly.</p>
       </div>
       <figure class="stage">
-        <div class="stage-disc"><canvas data-model="ligand" role="img" aria-label="Rotating 3D ball-and-stick model of theophylline"></canvas></div>
-        <figcaption>Theophylline, ligand of a classic RNA aptamer</figcaption>
+        <div class="stage-disc"><canvas data-model="complex" role="img" aria-label="Rotating 3D model of a stylised RNA–protein complex"></canvas></div>
+        <figcaption>A stylised RNA–protein complex</figcaption>
       </figure>
     </section>
 
-    <section class="band" aria-labelledby="software">
-      <h2 class="h2" id="software">Software</h2>
-      <div class="feature">
-        <span class="year">2026</span>
-        <h3 class="feature-title"><a href="rnp-bench-project.html">RNP Bench</a></h3>
-        <p>A browser workbench for RNA–protein molecular dynamics: structure checks, interface and physics analysis, ready-to-run inputs for GROMACS, AMBER and OpenMM, and full trajectory analysis when the frames come back.</p>
-        <ul class="chips"><li>OpenMM</li><li>FastAPI</li><li>JavaScript</li><li>Molecular dynamics</li></ul>
-        <div class="actions">
-          <a class="btn btn-primary" href="rnp-bench.html">Open RNP Bench</a>
-          <a class="btn btn-ghost" href="rnp-bench-project.html">How it works</a>
+    <section class="band narrow" aria-labelledby="steps">
+      <h2 class="h2" id="steps">From structure to trajectory in seven steps</h2>
+      <ol class="steps">
+        <li><p class="step-title">Load</p><p class="step-desc">PDB, mmCIF or GROMACS files, or any released entry fetched from RCSB. Multi-model files open as a trajectory.</p></li>
+        <li><p class="step-title">Structure</p><p class="step-desc">A cartoon viewer with secondary structure, and checks for gaps, missing side chains, non-standard residues and clashes.</p></li>
+        <li><p class="step-title">Interface</p><p class="step-desc">Contacts, salt bridges to phosphate, hydrogen bonds, stacking, Watson–Crick pairs and buried surface area.</p></li>
+        <li><p class="step-title">Physics</p><p class="step-desc">Collective motions tested against crystallographic B-factors, screened electrostatics, and RNA sugar pucker and backbone torsions.</p></li>
+        <li><p class="step-title">System plan</p><p class="step-desc">Force field, box, water model, ions and a cost estimate, before anything is built.</p></li>
+        <li><p class="step-title">Input files</p><p class="step-desc">Ready-to-run inputs for GROMACS, AMBER and OpenMM, downloadable together, with a check that the force field has a template for every residue before you queue anything.</p></li>
+        <li><p class="step-title">Trajectory</p><p class="step-desc">Bring the frames back and analyse them: 3D playback, RMSD, RMSF, radius of gyration, contact and hydrogen-bond occupancy, base-pair survival and RNA torsions over time.</p></li>
+      </ol>
+    </section>
+
+    <section class="band narrow" aria-labelledby="where">
+      <h2 class="h2" id="where">Where the simulation runs</h2>
+      <p class="prose">Molecular dynamics needs a real engine on real hardware, which a website does not have and should not pretend to. So the simulation is the one step RNP Bench deliberately leaves to you.</p>
+      <div class="arch">
+        <div class="arch-node">
+          <p class="arch-name">Prepare</p>
+          <p class="arch-desc">In your browser. Structure checks, interface and physics analysis, the system plan, and input files for all three engines.</p>
+        </div>
+        <div class="arch-link" aria-hidden="true"><span>download</span></div>
+        <div class="arch-node lab">
+          <p class="arch-name">Run</p>
+          <p class="arch-desc">Wherever you have the hardware: a lab GPU, a university cluster, a free GPU notebook. Nothing here touches your machine or mine.</p>
+        </div>
+        <div class="arch-link" aria-hidden="true"><span>upload</span></div>
+        <div class="arch-node">
+          <p class="arch-name">Analyse</p>
+          <p class="arch-desc">Back in your browser. Load the trajectory and every analysis works on it, whichever engine produced it.</p>
+        </div>
+      </div>
+      <p class="prose">Nothing you load is uploaded anywhere: structures and trajectories stay in the browser. That also makes the copy on this site a working tool rather than a screenshot, since only the run step ever needed a server.</p>
+      <p class="prose">I run my own simulations through the same page, served by its OpenMM backend on a lab GPU over an SSH tunnel. The page notices when that backend is there and offers a Run step; on a public site like this one, it does not.</p>
+    </section>
+
+    <section class="band narrow" id="example-run" aria-labelledby="example-title" hidden>
+      <h2 class="h2" id="example-title">A run recorded on the lab GPU</h2>
+      <p class="prose">Since the run step is not available here, I recorded one and published its frames and energy curves. RNP Bench loads them straight into the trajectory step, so you can try the analysis without running anything first.</p>
+      <dl class="facts">
+        <div><dt>System</dt><dd data-field="title"></dd></div>
+        <div><dt>Atoms</dt><dd data-field="total_atoms"></dd></div>
+        <div><dt>Force field and water</dt><dd data-field="force_field"></dd></div>
+        <div><dt>Production</dt><dd data-field="production"></dd></div>
+        <div><dt>Hardware</dt><dd data-field="hardware"></dd></div>
+        <div><dt>Throughput</dt><dd data-field="throughput"></dd></div>
+      </dl>
+      <div class="actions"><a class="btn btn-primary" href="rnp-bench.html?example">Open the recorded run</a></div>
+    </section>
+
+    <section class="band narrow" aria-labelledby="choices">
+      <h2 class="h2" id="choices">Design choices</h2>
+      <div class="choices">
+        <div>
+          <h3 class="h3">Private by default</h3>
+          <p>Nothing you load leaves the browser. The optional OpenMM backend listens on localhost; put it on a network and it generates a token, stops accepting browser origins it was not told about, and refuses systems above an atom limit.</p>
+        </div>
+        <div>
+          <h3 class="h3">Engine-agnostic</h3>
+          <p>The analysis reads a plain multi-model PDB, so it does not care which engine produced the trajectory. Runs on the OpenMM backend also download as one archive with the fully parameterised system, the integrator and its seed, and a script to continue.</p>
+        </div>
+        <div>
+          <h3 class="h3">Statistics that admit their limits</h3>
+          <p>Torsions use circular statistics, drift is tested against the scatter within each half of the run, and interaction energies are reported as interaction energies, not binding free energies.</p>
+        </div>
+        <div>
+          <h3 class="h3">AI review, human decisions</h3>
+          <p>Gemini sees a few kilobytes of summary numbers, never coordinates. Its proposals arrive as cards to apply or reject, and every decision goes into a log.</p>
         </div>
       </div>
     </section>
 
-    <section class="band" aria-labelledby="compbio">
-      <h2 class="h2" id="compbio">Computational biology</h2>
-      <ul class="grid2">
-        <li class="proj"><span class="year">2026</span><p class="proj-title">Off-target gRNA identification in CRISPR systems</p><p class="proj-meta">Information Retrieval Systems course</p></li>
-        <li class="proj"><span class="year">2026</span><p class="proj-title"><span class="keep">RNA–protein</span> docking with diffusion models</p><p class="proj-meta">Deep Generative Models course</p></li>
-        <li class="proj"><span class="year">2026</span><p class="proj-title">Reinforcement learning agent that defends genomic beacons against reconstruction attacks</p><p class="proj-meta">Data Privacy course</p></li>
-        <li class="proj"><span class="year">2025</span><p class="proj-title">Enhancing <span class="keep">protein–drug</span> interaction prediction with contrastive loss and RNN sequence encoders</p><p class="proj-meta">Machine Learning course</p></li>
-        <li class="proj"><span class="year">2024</span><p class="proj-title">RNA sequence generation and optimisation with GANs and reinforcement learning</p><p class="proj-meta">Deep Learning course</p></li>
+    <section class="band narrow" aria-labelledby="stack">
+      <h2 class="h2" id="stack">Built with</h2>
+      <ul class="chips soft">
+        <li>JavaScript, no external libraries</li>
+        <li>OpenMM</li>
+        <li>PDBFixer</li>
+        <li>FastAPI</li>
+        <li>Uvicorn</li>
+        <li>NumPy</li>
+        <li>Gemini API</li>
       </ul>
     </section>
 
-    <section class="band" aria-labelledby="deep-learning">
-      <h2 class="h2" id="deep-learning">Deep learning</h2>
-      <ul class="grid2">
-        <li class="proj"><span class="year">2024</span><p class="proj-title">Knowledge distillation in large language models</p><p class="proj-meta">Deep Learning course</p></li>
-        <li class="proj"><span class="year">2023</span><p class="proj-title">Semantic segmentation on the CamVid dataset with U-Net, PSP-Net and FPN</p><p class="proj-meta">PyTorch</p></li>
-        <li class="proj"><span class="year">2023</span><p class="proj-title">DCGAN face synthesis on CelebA, CycleGAN image-to-image translation, and a conditional GAN that colourises greyscale images</p><p class="proj-meta">PyTorch</p></li>
-        <li class="proj"><span class="year">2023</span><p class="proj-title">DeepDream on a VGG16 backbone written from scratch and trained on CIFAR-10</p><p class="proj-meta">PyTorch</p></li>
-      </ul>
-    </section>
-
-    <section class="band narrow" aria-labelledby="skills">
-      <h2 class="h2" id="skills">Skills</h2>
-      <div class="skill-groups">
-        <div>
-          <h3 class="h3">Programming</h3>
-          <ul class="chips soft"><li>Python</li><li>C#</li><li>JavaScript</li><li>R</li></ul>
-        </div>
-        <div>
-          <h3 class="h3">Machine learning</h3>
-          <ul class="chips soft"><li>PyTorch</li><li>TensorFlow</li><li>Hugging Face</li><li>Distributed and multi-GPU training</li></ul>
-        </div>
-        <div>
-          <h3 class="h3">Computational biology</h3>
-          <ul class="chips soft"><li>NCBI</li><li>Bioconductor</li><li>Biopython</li><li>GWAS Catalog</li><li>PyMOL</li><li>ChimeraX</li><li>Molecular dynamics (OpenMM)</li><li>Docking tools</li></ul>
-        </div>
-      </div>
-    </section>
+    <script>
+      /* Show the recorded run only if one is published next to the app. */
+      (() => {
+        const section = document.getElementById("example-run");
+        if (!section || location.protocol === "file:") return;
+        fetch("rnp-bench-example/manifest.json", { cache: "no-cache" })
+          .then((r) => (r.ok ? r.json() : null))
+          .then((m) => {
+            if (!m || typeof m.trajectory !== "string") return;
+            const time = (ps) => (ps >= 1000 ? `${+(ps / 1000).toFixed(2)} ns` : `${ps} ps`);
+            const values = {
+              title: m.title,
+              total_atoms: m.total_atoms ? Number(m.total_atoms).toLocaleString("en-GB") : "",
+              force_field: [m.force_field, m.water && String(m.water).toUpperCase()].filter(Boolean).join(", "),
+              production: m.production_ps ? time(m.production_ps) + (m.temp_K ? ` at ${m.temp_K} K` : "") : "",
+              hardware: [m.hardware, m.platform && `(${m.platform})`].filter(Boolean).join(" "),
+              throughput: m.throughput_ns_day ? `${Math.round(m.throughput_ns_day)} ns/day` : ""
+            };
+            section.querySelectorAll("[data-field]").forEach((dd) => {
+              const value = values[dd.dataset.field];
+              if (value) dd.textContent = value;
+              else dd.parentElement.remove();
+            });
+            section.hidden = false;
+          })
+          .catch(() => {});
+      })();
+    </script>
   </main>
 
   <footer class="site-foot">
