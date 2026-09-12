@@ -168,13 +168,18 @@ Nothing is deleted and there is no second file to keep in sync. The Run view
 stays in the document; the parts of it that work without a backend move to where
 they are still useful:
 
-- **The tab disappears** and the remaining steps renumber to 1–7, so Trajectory
-  becomes step 7.
+- **The Run tab disappears** and the remaining steps renumber to 1–7, so
+  Trajectory becomes step 7.
 - **The pre-flight force-field check moves to step 6**, next to the input files,
   under a short explanation of where those files go and what to bring back.
   Knowing that a residue has no template is more useful *before* you queue a job
   on a cluster than after.
-- **The live plots move to step 8** and become a run log rather than a run in
+- **Step 7, Trajectory, leads with a drop zone.** Bringing frames back is the
+  first thing you do there, so it is the first thing on the page, with the
+  `gmx trjconv` and `cpptraj` recipes for producing a multi-model PDB, and a
+  reminder to strip the solvent before you write one. It collapses to a single
+  line once frames are loaded.
+- **The live plots move to step 7** and become a run log rather than a run in
   progress. They fill from a recorded example, or from a `series.csv` the visitor
   loads themselves — the same file the run archive contains.
 - **Interaction energy stays visible but explains itself.** It needs the charges
